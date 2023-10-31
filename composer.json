@@ -1,6 +1,6 @@
 {
     "name": "beastbytes/yii-middleware",
-    "description": "User module for Yii3 ",
+    "description": "PSR15 middleware classes for Yii3 ",
     "keywords": [
         "yii3",
         "extension",
