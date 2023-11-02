@@ -19,6 +19,8 @@ use Yiisoft\User\CurrentUser;
 
 final class AccessChecker implements MiddlewareInterface
 {
+    public const PERMISSION_NOT_SET_EXCEPTION = 'Permission not set.';
+
     private array $parameters = [];
     private ?string $permission = null;
 
@@ -32,7 +34,7 @@ final class AccessChecker implements MiddlewareInterface
     public function process(ServerRequestInterface $request, RequestHandlerInterface $handler): ResponseInterface
     {
         if ($this->permission === null) {
-            throw new RuntimeException('Permission not set.');
+            throw new RuntimeException(self::PERMISSION_NOT_SET_EXCEPTION);
         }
 
         if (
