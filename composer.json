@@ -20,6 +20,7 @@
 
     },
     "require-dev": {
+        "dg/bypass-finals": "^v1.0",
         "phpunit/phpunit": "^10.0",
         "roave/infection-static-analysis-plugin": "^1.7",
         "roave/security-advisories": "dev-latest",
