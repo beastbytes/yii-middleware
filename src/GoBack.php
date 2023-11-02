@@ -58,9 +58,10 @@ class GoBack implements MiddlewareInterface
      * @param string ...$ignoredRoute Route name(s) to ignore
      * @return $this
      */
-    public function addIgnoredRoute(string ...$ignoredRoute): self
+    public function withIgnoredRoute(string ...$ignoredRoute): self
     {
-        $this->ignoredRoutes = array_merge($this->ignoredRoutes, $ignoredRoute);
-        return $this;
+        $new = clone $this;
+        $new->ignoredRoutes = $ignoredRoute;
+        return $new;
     }
 }
